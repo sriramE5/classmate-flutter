@@ -1,5 +1,7 @@
+import 'package:class_mate/screens/chatbotpage.dart';
 import 'package:flutter/material.dart';
-import 'screens/dashboard.dart';
+import 'screens/classmate_dashboard.dart';
+import 'screens/attendance_calculator.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,12 +15,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'ClassMate',
-      theme: ThemeData.dark(),
+      theme: ThemeData.light(),
       initialRoute: '/',
       routes: {
         '/': (context) => const ClassMateDashboard(user: 'Ganesh'),  // Example username
-        '/attendance': (context) => Scaffold(body: Center(child: Text('Attendance Page'))),
-        '/chatbot': (context) => Scaffold(body: Center(child: Text('Chatbot Page'))),
+        '/attendance': (context) => const AttendanceCalculator(),
+        '/chatbot': (context) => const ChatbotPage(),
         '/taskManager': (context) => Scaffold(body: Center(child: Text('Task Manager Page'))),
         '/goalTracker': (context) => Scaffold(body: Center(child: Text('Goal Tracker Page'))),
         '/performance': (context) => Scaffold(body: Center(child: Text('Performance Page'))),

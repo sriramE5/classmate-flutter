@@ -8,15 +8,18 @@ class ClassMateDashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF121212),
+      backgroundColor: Colors.white, // Light background
       appBar: AppBar(
-        backgroundColor: const Color(0xFF1F1F1F),
-        title: const Text('ClassMate'),
+        backgroundColor: Colors.white,
+        elevation: 1,
+        title: const Text('ClassMate', style: TextStyle(color: Colors.black)),
         centerTitle: true,
+        iconTheme: const IconThemeData(color: Colors.black),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // Greeting
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: ShaderMask(
@@ -32,11 +35,12 @@ class ClassMateDashboard extends StatelessWidget {
                 style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
-                  color: Colors.white,
+                  color: Colors.white, // masked by gradient
                 ),
               ),
             ),
           ),
+          // Dashboard
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(12.0),
@@ -48,26 +52,13 @@ class ClassMateDashboard extends StatelessWidget {
                   dashboardCard(context, Icons.calendar_today, "Attendance", "/attendance"),
                   dashboardCard(context, Icons.smart_toy, "AI Chatbot", "/chatbot"),
                   dashboardCard(context, Icons.task, "Task Manager", "/taskManager"),
-                  dashboardCard(context, Icons.flag, "Goal Tracker", "/goalTracker"), // Changed icon to 'flag'
+                  dashboardCard(context, Icons.flag, "Goal Tracker", "/goalTracker"),
                   dashboardCard(context, Icons.show_chart, "Performance", "/performance"),
                   dashboardCard(context, Icons.settings, "Settings", "/settings"),
                 ],
               ),
             ),
           ),
-        ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: const Color(0xFF1F1F1F),
-        selectedItemColor: const Color(0xFFfcb045),
-        unselectedItemColor: Colors.grey[400],
-        type: BottomNavigationBarType.fixed,
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.task), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.flag), label: ''), // Changed icon to 'flag'
-          BottomNavigationBarItem(icon: Icon(Icons.smart_toy), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
         ],
       ),
     );
@@ -79,21 +70,17 @@ class ClassMateDashboard extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          gradient: const LinearGradient(
-            colors: [Color(0xFF3a3a3a), Color(0xFF2a2a2a)],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
+          color: const Color(0xFFF1F1F1), // Light card color
         ),
         padding: const EdgeInsets.all(20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, size: 32, color: Colors.white),
+            Icon(icon, size: 32, color: Colors.black),
             const SizedBox(height: 10),
             Text(
               title,
-              style: const TextStyle(color: Colors.white),
+              style: const TextStyle(color: Colors.black),
               textAlign: TextAlign.center,
             )
           ],
