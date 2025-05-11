@@ -51,7 +51,7 @@ class ClassMateDashboard extends StatelessWidget {
                 children: [
                   dashboardCard(context, Icons.calendar_today, "Attendance", "/attendance"),
                   dashboardCard(context, Icons.smart_toy, "AI Chatbot", "/chatbot"),
-                  dashboardCard(context, Icons.task, "Task Manager", "/taskManager"),
+                  dashboardCard(context, Icons.note, "Notes", "/notes"),
                   dashboardCard(context, Icons.flag, "Goal Tracker", "/goalTracker"),
                   dashboardCard(context, Icons.show_chart, "Performance", "/performance"),
                   dashboardCard(context, Icons.settings, "Settings", "/settings"),
